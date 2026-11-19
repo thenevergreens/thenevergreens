@@ -1073,11 +1073,11 @@
             <span>16 photos</span>
           </div>
         </div>
-        <div class="album-cover" onclick="openAlbum('2026','joe-cain-day','⚜️ Joe Cain Day',21)">
+        <div class="album-cover" onclick="openAlbum('2026','joe-cain-day','⚜️ Joe Cain Day',100)">
           <img src="photos/2026/joe-cain-day/photo (1).jpg" alt="Joe Cain Day" onerror="this.style.display='none'">
           <div class="album-cover-label">
             <h4>⚜️ Joe Cain Day</h4>
-            <span>21 photos</span>
+            <span>View photos</span>
           </div>
         </div>
       </div>
@@ -1190,6 +1190,7 @@
       var img = document.createElement('img');
       img.src = src;
       img.loading = 'lazy';
+      img.onerror = function(){ this.remove(); };
       img.onclick = (function(s){ return function(){ openPhoto(s); }; })(src);
       grid.appendChild(img);
     }
